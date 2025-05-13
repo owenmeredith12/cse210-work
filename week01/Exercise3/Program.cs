@@ -5,8 +5,9 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
-        Console.WriteLine("Give me a random number that is less than 10");
-        int number = Convert.ToInt32(Console.ReadLine());
+
+        Random rand = new Random();
+        int number = rand.Next(0, 10);
 
         Console.WriteLine("Give me a guess");
         int guess = Convert.ToInt32(Console.ReadLine());
