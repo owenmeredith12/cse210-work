@@ -1,7 +1,7 @@
 public class Order
 {
-    public List<Product> _products;
-    public Customer _customer;
+    private List<Product> _products;
+    private Customer _customer;
 
     public Order(Customer customer)
     {
@@ -30,9 +30,12 @@ public class Order
     public string GetPackingLabel()
     {
         string label = "Packing Label:\n";
+
         foreach (Product product in _products)
         {
-            label += $"{product._name} (ID: {product._productId})\n";
+            string name = product.getName();
+            string productId = product.getProductId();
+            label += $"{name} (ID: {productId})\n";
         }
         return label;
     }
